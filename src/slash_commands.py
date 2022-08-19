@@ -17,6 +17,6 @@ class SlashClient(discord.Client):
         await self.wait_until_ready()
         if not self.synced:
             guild_id = 832176801417658388
-            await self._tree.sync(guild=Object(id=guild_id))  # guild sync, remove id for global sync
+            await self._tree.sync()  # guild sync, remove id for global sync
             self.synced = True
         print(f'we have logged in as {self.user}./')
