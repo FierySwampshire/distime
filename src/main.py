@@ -106,11 +106,12 @@ def client(SECRET_KEY):
     @client.event
     async def on_message(message):
         print(msg_dict(message))
+        author:discord.member.Member = message.author
         print('Message from {0.author}: {0.content}'.format(message))
         if message.author == client.user:
             return
         if message.content.startswith('$hello'):
-            await message.channel.send('Hello!')
+            await message.channel.send(f'{author.mention} Hello!')
     client.run(SECRET_KEY)
 
 def run():

@@ -15,10 +15,6 @@
         "scripts": {
           "test-setup": "python manage.py collectstatic --noinput",
           "test": "python manage.py test"
-          // poetry setup
-          // create venv
-          // install deps
-          // run app
         }
       }
     }
