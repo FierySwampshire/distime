@@ -7,8 +7,8 @@ import discord
 # (t, timestamp, style)
 time_tag_builder = '<{t}:{timestamp}:{style}>'.format
 
-def timestamp(dt: datetime):
-    return int(dt)
+def timestamp():
+    return int(datetime.now().timestamp())
 # key:value
 displayFormats = {
     't': "LT",  # short time
@@ -25,8 +25,8 @@ formatsExplaination = {
 'T': 'long time',
 'd': 'short date',
 'D': 'long date',
-'f': 'short date/time',
-'F': 'long date/time',
+'f': 'short date time',
+'F': 'long date time',
 "R": 'relative time',
 }
 
@@ -34,6 +34,13 @@ def test():
     timestamp = int(datetime.now().timestamp())
     for k, v in formatsExplaination.items():
         print(v, time_tag_builder(t='t', timestamp=timestamp, style=k))
+
+
+def get_secret_key():
+    SECRET_KEY = str(os.getenv("SECRET_KEY", None))
+    if SECRET_KEY == str(None):
+        SECRET_KEY = 'MTAwNTg1NTAzNDQ4NDk4NTk1Nw.GNu8mk._SON33hkTeeBexbeR_84WYxKSm18eXzkvrda7o'
+    return SECRET_KEY
 
 
 def main():
