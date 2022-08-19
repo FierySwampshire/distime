@@ -40,7 +40,7 @@ def main():
     # client = MyClient()
     SECRET_KEY = str(os.getenv("SECRET_KEY", None))
     print(f'{SECRET_KEY=}')
-    if SECRET_KEY is None:
+    if SECRET_KEY == str(None):
         SECRET_KEY = 'MTAwNTg1NTAzNDQ4NDk4NTk1Nw.GNu8mk._SON33hkTeeBexbeR_84WYxKSm18eXzkvrda7o'
     # client.run(str(SECRET_KEY))
     client(SECRET_KEY)
