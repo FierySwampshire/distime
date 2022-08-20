@@ -18,6 +18,7 @@
         "url": "heroku/python"
       }
     ],
+    "stack": "heroku-22",
     "environments": {
       "test": {
         "scripts": {
