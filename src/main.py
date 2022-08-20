@@ -61,7 +61,7 @@ def msg_dict(message: discord.Message):
         'application':message.application,
         'attachments':message.attachments,
         'author':message.author,
-        'call':message.call,
+        # 'call':message.call,
         'channel':message.channel,
         # 'channel_mentions':message.channel_mentions,
         # 'clean_content':message.clean_content,
@@ -104,14 +104,18 @@ def msg_dict(message: discord.Message):
 
 
 def client(SECRET_KEY):
-    client = discord.Client()
+    intents = discord.Intents.default()
+    intents.message_content = True
+    client = discord.Client(intents=intents)
 
     @client.event
     async def on_ready():
         print('We have logged in as {0.user}'.format(client))
 
     @client.event
-    async def on_message(message):
+    async def on_message(message:discord.message.Message):
+        print(type(message))
+        print(message)
         print(msg_dict(message))
         author:discord.member.Member = message.author
         print('Message from {0.author}: {0.content}'.format(message))

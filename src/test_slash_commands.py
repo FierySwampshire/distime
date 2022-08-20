@@ -1,7 +1,7 @@
 from discord import Interaction, Object
 from discord.app_commands import CommandTree
-from slash_commands import SlashClient
-from main import get_secret_key, formatsExplaination, time_tag_builder, timestamp
+from src.slash_commands import SlashClient
+from src.main import get_secret_key, formatsExplaination, time_tag_builder, timestamp
 from random import randint
 
 def make_dttime_command(tree: CommandTree, guild_id, style, desc):
@@ -26,5 +26,5 @@ def main():
     client.run(get_secret_key())
 
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()
