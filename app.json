@@ -13,6 +13,11 @@
     "scripts": {
       "postDeploy": "bash deploy.sh"
     },
+    "buildpacks":[
+      {
+        "url": "heroku/python"
+      }
+    ],
     "environments": {
       "test": {
         "scripts": {
