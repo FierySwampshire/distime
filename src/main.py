@@ -38,8 +38,6 @@ def test():
 
 def get_secret_key():
     SECRET_KEY = str(os.getenv("SECRET_KEY", None))
-    if SECRET_KEY == str(None):
-        SECRET_KEY = 'MTAwNTg1NTAzNDQ4NDk4NTk1Nw.GNu8mk._SON33hkTeeBexbeR_84WYxKSm18eXzkvrda7o'
     return SECRET_KEY
 
 
